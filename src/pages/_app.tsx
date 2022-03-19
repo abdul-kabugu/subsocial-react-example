@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <StyledEngineProvider injectFirst>
       <Head>
-        <title>rSocial</title>
+        <title>debble</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <I18nextProvider i18n={i18n}>
@@ -49,7 +49,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                     onSidebarClose={handleMobileBurgerClick}
                   />
                   <Header
-                    label="rSocial"
+                    label="debble"
                     onMobileBurgerClick={handleMobileBurgerClick}
                     isShowingMobileBurger={isShowingMobileBurger}
                   />
