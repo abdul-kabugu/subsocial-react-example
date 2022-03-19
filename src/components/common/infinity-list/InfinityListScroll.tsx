@@ -7,6 +7,7 @@ import Loader from '../../common/loader/Loader';
 import EmptyComponent from '../../common/empty/EmptyComponent';
 import { DataListItemProps, InnerLoadMoreFn } from 'src/models/infinity-scroll';
 import { useTranslation } from 'react-i18next';
+import Box from '@mui/material/Box';
 
 interface InfinityPostList extends DataListItemProps {
   dataSource: string[];
@@ -53,11 +54,13 @@ const InfinityListScroll: FC<InfinityPostList> = ({
       hasMore={data.length < totalCount}
       className={styles.list}
     >
+      <Box sx={{ display: 'grid', gap: 1, gridTemplateColumns: 'repeat(3, 1fr)' }}>
       {!isEmpty ? (
         data.map((id: string) => renderItem(id))
       ) : (
         <EmptyComponent text={emptyText} />
       )}
+      </Box>
     </InfiniteScroll>
   );
 };
