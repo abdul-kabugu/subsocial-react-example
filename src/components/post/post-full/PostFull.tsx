@@ -139,7 +139,7 @@ const PostFull: FC<PostFullProps> = (props) => {
               subheader={
                 <>
                   {/*@ts-ignore*/}
-                  <SmallLink
+                <SmallLink
                     href={getUrl({
                       type: TypeUrl.Space,
                       //@ts-ignore
@@ -148,7 +148,7 @@ const PostFull: FC<PostFullProps> = (props) => {
                     })}
                   >
                     {space?.content?.name || postData?.space?.content?.name}
-                  </SmallLink>
+                  </SmallLink>  
                   {'\xA0 · \xA0'}
                   <SmallLink
                     href={getUrl({

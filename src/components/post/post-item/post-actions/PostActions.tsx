@@ -43,10 +43,10 @@ const PostActions: FC<PostActionsProps> = (props) => {
       <CardActions className={className}>
         <ButtonVotes post={post.struct} reactionEnum={ReactionEnum.Upvote} />
         <ButtonVotes post={post.struct} reactionEnum={ReactionEnum.Downvote} />
-        <ButtonComment
+       {/* <ButtonComment
           onClick={props.toggleComments}
           value={visibleRepliesCount}
-        />
+  />  */}
         <ButtonShare
           onClick={onClickShare}
           value={sharesCount}

@@ -1,6 +1,10 @@
 @import src/styles/vars
 
-$size_img_content: 174px
+$size_img_content:  100%//335px 
+$size_img_height: 280px
+$size_img_mobile_height: 270px
+
+
 
 .post
   &:global(.MuiPaper-root-MuiCard-root)
@@ -11,8 +15,19 @@ $size_img_content: 174px
     font-size: $font_normal
 
 .title
-  margin-bottom: $space_mini
+  margin-bottom: 0
+  font-size: $font_normal
+  font-weight: 500 
+  
+  
+  text-transform: capitalize
+  
 
+.spaceLink
+  font-size: $font-small
+  
+  &:hover
+    text-decoration: underline
 .embed
   margin-bottom: $space_tiny
 
@@ -44,8 +59,32 @@ $size_img_content: 174px
 
 .mainPostContent
   display: flex
-  width: 100%
+  flex-direction: column
+   justify-content: space-between
+
+  width:     100% //335.33px 
+  height: 288.33px
   padding-top: 0
+
+  .mainPostContentMobile
+   display: flex
+  flex-direction: column
+   justify-content: space-between
+ 
+  width:   100% //400.33px
+  height: 320.33px
+  padding-top: 0
+   border-radius: 16px
+
+  .mainPostContentTablet
+   display: flex
+  flex-direction: column
+   justify-content: space-between
+ 
+  width:   100% //400.33px
+  height: 320.33px
+  padding-top: 0
+   border-radius: 16px
 
 .mainPostContent_shared
   padding-bottom: 0
@@ -72,12 +111,11 @@ $size_img_content: 174px
 
 .imgContentMobile
   width: 100%
-  max-height: 242px
-  margin-top: $space_normal
+  height: $size_img_mobile_height
   border-radius: 0.25rem
 
 .imgContentDesktop
   width: $size_img_content
-  height: $size_img_content
-  margin: $space_normal 0 $space_normal $space_normal
+  height: $size_img_height
+  //margin: $space_normal 0 $space_normal $space_normal
   border-radius: 0.25rem
