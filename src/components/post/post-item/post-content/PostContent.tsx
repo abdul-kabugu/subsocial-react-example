@@ -16,7 +16,7 @@ import {
   ReactionEnum,
 } from '@subsocial/types/dto';
 
-//import SmallLink from '../../common/links/small-link/SmallLink';
+
 const PostContent: FC<any> = (props) => {
   const { isMobile, isDesktop,isTablet } = useResponsiveSize();
   const { post, space, profile } = props;
@@ -201,7 +201,7 @@ const PostContent: FC<any> = (props) => {
         />
      
       <div style={{ paddingLeft: "5px", paddingRight: "5px", width: "100%", paddingTop: "2px", display: "flex", justifyContent: "space-between",
-        alignItems: "flex-end", paddingBottom: "4px"
+        alignItems: "flex-end", paddingBottom: "10px"
     }}>
       {post.content.title && (
           <Link

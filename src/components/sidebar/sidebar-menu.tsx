@@ -5,51 +5,50 @@ import LanguageIcon from '@mui/icons-material/Language';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import {StorefrontOutlined, AnnouncementOutlined, BugReportOutlined} from '@mui/icons-material'
 
 export const frameworks: ItemType[] = [
   {
-    name: 'Angular App',
-    icon: <Image src={'/angular.jpg'} alt={'angular'} width={20} height={22} />,
+    name: 'Marketplace',
+    icon: <StorefrontOutlined />,
     href: '/',
   },
   {
-    name: 'Vue App',
-    icon: <Image src={'/vue.svg'} alt={'vue'} width={20} height={17} />,
+    name: 'Blog',
+    icon: <AnnouncementOutlined />,
     href: '/',
   },
 ];
 
 export const additional: ItemType[] = [
   {
-    name: 'buttons.subsocialApp',
+    name: 'Privacy',
     icon: (
       <Image
-        src={'/favicon.ico'}
-        alt={'Subsocial app'}
+        src={'/privacy.png'}
+        alt={'privacy'}
         width={20}
         height={20}
       />
     ),
     href: '/',
   },
+
+ 
   {
-    name: 'buttons.landingPage',
-    icon: <LanguageIcon />,
-    href: '/',
-  },
-  {
-    name: 'buttons.legalDocuments',
+    name: 'Terms of use',
     icon: <DescriptionOutlinedIcon />,
     href: '/',
   },
+ 
   {
-    name: 'buttons.github',
-    icon: <GitHubIcon />,
+    name: 'FAQs',
+    icon: <HelpOutlineIcon />,
     href: '/',
   },
   {
-    name: 'buttons.whatIsSubsocial',
-    icon: <HelpOutlineIcon />,
+    name: 'Report bugs',
+    icon: <BugReportOutlined />,
     href: '/',
   },
 ];
@@ -58,25 +57,25 @@ export const social: ItemType[] = [
   {
     name: 'Twitter',
     icon: <Image src={'/twitter.svg'} alt={'Twitter'} width={15} height={15} />,
-    href: '/',
+    href: 'https://twitter.com/KabuguAbdul',
   },
   {
     name: 'Discord',
     icon: <Image src={'/discord.svg'} alt={'Discord'} width={15} height={15} />,
-    href: '/',
+    href: 'https://twitter.com/KabuguAbdul',
   },
   {
     name: 'Telegram',
     icon: (
       <Image src={'/telegram2.svg'} alt={'Telegram'} width={15} height={15} />
     ),
-    href: '/',
+    href: 'https://t.me/debble_official',
   },
   {
     name: 'Megaphone',
     icon: (
       <Image src={'/megaphone.svg'} alt={'Megaphone'} width={15} height={15} />
     ),
-    href: '/',
+    href: 'https://t.me/debble_official',
   },
 ];

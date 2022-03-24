@@ -73,6 +73,7 @@ const Post: FC<Props> = ({
         <PostContent {...postData} profile={profile} />
       )}
       {isShowActions && !isSharedPost && <Divider variant="middle" />}
+     
       {isShowActions && (
         <PostActions
           post={postData.post}

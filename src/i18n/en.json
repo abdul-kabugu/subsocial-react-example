@@ -2,7 +2,7 @@
   "imageShouldBeLessThan": "Image should be less than {{limit}} MB",
   "general": {
     "post": "post",
-    "space": "space",
+    "space": "page",
     "comment": "comment",
     "profile": "profile",
     "seeMore": "See More",
@@ -33,7 +33,7 @@
     "upvotes": "upvotes",
     "downvotes": "downvotes",
     "posts": "posts",
-    "spaces": "spaces",
+    "spaces": "pages",
     "article": "article",
     "video": "video",
     "feed": "my feed"
@@ -69,8 +69,8 @@
     "upvote": "Upvote",
     "downvote": "Downvote",
     "writePost": "Write post",
-    "editSpace": "Edit space",
-    "createSpace": "Create space",
+    "editSpace": "Edit page",
+    "createSpace": "Create page",
     "privacyPolicy": "Privacy Policy",
     "termsOfUse": "Terms of Use",
     "resetForm": "Reset form",
@@ -82,7 +82,7 @@
     "editMyProfile": "Edit my profile",
     "settings": "Settings",
     "Language": "Language",
-    "createMyFirstSpace": "Create my first space",
+    "createMyFirstSpace": "Create my first page",
     "getTokens": "Get tokens",
     "landingPage": "Landing page",
     "legalDocuments": "Legal Documents",
@@ -166,9 +166,9 @@
   },
   "forms": {
     "titles": {
-      "chooseSpace": "Choose a space for a new post",
-      "newSpace": "New Space",
-      "editSpace": "Edit Space",
+      "chooseSpace": "Choose a Page for a new post",
+      "newSpace": "New Page",
+      "editSpace": "Edit Page",
       "newPost": "New Post",
       "editPost": "Edit Post",
       "newProfile": "New Profile",
@@ -189,12 +189,12 @@
       "about": "About",
       "videoUrl": "Video URL",
       "postTitle": "Post title",
-      "spaceName": "Space name",
+      "spaceName": "Page name",
       "description": "Description",
       "addReply": "Add a reply...",
       "addComment": "Add a comment...",
       "comment": "Comment",
-      "postInSpace": "Post in a space"
+      "postInSpace": "Post in a Page"
     },
     "permissions": {
       "whoCanPost": {
@@ -205,28 +205,28 @@
     }
   },
   "generalMessages": {
-    "hiddenPostBySpace": "This post is not visible because its space is hidden",
+    "hiddenPostBySpace": "This post is not visible because its page is hidden",
     "hiddenPost": "This post is unlisted and only you can see it",
-    "hiddenSpace": "This space is unlisted and only you can see it",
+    "hiddenSpace": "This page is unlisted and only you can see it",
     "hiddenComment": "This comment is unlisted and only you can see it",
-    "emptyFeed": "Your feed is empty. Try to follow more spaces ;)",
-    "createSpaceFirst": "Please create your space first",
+    "emptyFeed": "Your feed is empty. Try to follow more pages ;)",
+    "createSpaceFirst": "Please create your page first",
     "dontHavePermission": "You do not have permission to edit this {{type}}"
   },
   "formHints": {
     "whoCanPost": {
-      "space_owner": "Only you can create and edit posts in this space.",
-      "follower": "You and followers of this space can create and edit own posts.",
-      "everyone": "Everyone can create and edit their own posts in this space.",
-      "none": "None can create or edit posts in this space."
+      "space_owner": "Only you can create and edit posts in this page.",
+      "follower": "You and followers of this page can create and edit own posts.",
+      "everyone": "Everyone can create and edit their own posts in this page.",
+      "none": "None can create or edit posts in this page."
     },
     "embedded": "You can embed links from YouTube, Vimeo and SoundCloud."
   },
   "notifications": {
     "title": "Notifications",
     "AccountFollowed": "followed your account",
-    "SpaceFollowed": "followed your space",
-    "SpaceCreated": "created a new space",
+    "SpaceFollowed": "followed your page",
+    "SpaceCreated": "created a new page",
     "CommentCreated": "commented on your post",
     "CommentReplyCreated": "replied to your comment on",
     "PostShared": "shared your post",
@@ -237,8 +237,8 @@
   },
   "activities": {
     "AccountFollowed": "followed the account",
-    "SpaceFollowed": "followed the space",
-    "SpaceCreated": "created the space",
+    "SpaceFollowed": "followed the page",
+    "SpaceCreated": "created the page",
     "PostCreated": "created the post",
     "PostSharing": "shared the post",
     "PostShared": "shared the post",
@@ -250,8 +250,8 @@
   },
   "statistics": {
     "AccountFollowed": "Accounts followed",
-    "SpaceFollowed": "Spaces followed",
-    "SpaceCreated": "Spaces created",
+    "SpaceFollowed": "Pages followed",
+    "SpaceCreated": "Pages created",
     "PostCreated": "Posts created",
     "PostSharing": "Posts shared",
     "PostShared,CommentShared": "Posts shared",
@@ -276,7 +276,7 @@
   },
   "spaces": {
     "offical": {
-      "officialSpace": "Official space",
+      "officialSpace": "Official page",
       "unclaimedSpace": "Claim ownership is pending"
     }
   },
@@ -286,13 +286,13 @@
   "content": {
     "noFeed": "No feed yet",
     "noPosts": "No posts yet",
-    "noSpaces": "No spaces yet",
+    "noSpaces": "No pages yet",
     "noDownload": "No download yet",
     "postNotFound": "Post not found",
     "morePost": "Loading more posts...",
-    "moreSpaces": "Loading more spaces...",
+    "moreSpaces": "Loading more pages...",
     "moreProfiles": "Loading more profiles...",
-    "loadingSpace": "Loading spaces...",
+    "loadingSpace": "Loading pages...",
     "loading": "Loading..."
   },
   "dayjs": {

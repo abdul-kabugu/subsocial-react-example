@@ -44,10 +44,10 @@ const SharedPost: FC<any> = (props) => {
   }, []);
 
   return (
-    <CardContent className={className}>
-      <CardContent className={styles.sharedContent}>
-        <CardHeader
-          avatar={
+    <div className={className}>
+      <div className={styles.sharedContent}>
+      {/*  <CardHeader
+          avatar={ 
             <Link
               href={getUrl({
                 type: TypeUrl.Account,
@@ -61,7 +61,7 @@ const SharedPost: FC<any> = (props) => {
                 id={profile?.id}
               />
             </Link>
-          }
+            }
           action={
             <Options
               className={styles.action}
@@ -71,7 +71,7 @@ const SharedPost: FC<any> = (props) => {
               typeContent={TypeContent.Post}
               onClickEdit={onClickEdit}
             />
-          }
+          } 
           title={
             <Link
               href={getUrl({
@@ -108,8 +108,8 @@ const SharedPost: FC<any> = (props) => {
               </SmallLink>
             </>
           }
-        />
-        {post?.content?.body && (
+        /> */}
+       {/* {post?.content?.body && (
           <Text
             component={'div'}
             type={TextSizes.NORMAL}
@@ -117,7 +117,7 @@ const SharedPost: FC<any> = (props) => {
           >
             {post?.content?.body}
           </Text>
-        )}
+       )} */}
         {!isNotfoundPost ? (
           <Post
             postId={sharedPostId}
@@ -131,8 +131,8 @@ const SharedPost: FC<any> = (props) => {
             </Text>
           </CardWrapper>
         )}
-      </CardContent>
-    </CardContent>
+      </div>
+    </div>
   );
 };
 

@@ -61,11 +61,11 @@ const Sidebar: FC<SidebarProps> = ({
               <ListItem button key={item.name} className={styles.item}>
                 <ListItemIcon className={styles.icon}>{item.icon}</ListItemIcon>
                 <ListItemText>
-                  <Text
+                 <a href={item.href}> <Text
                     type={!isDesktop ? TextSizes.NORMAL : TextSizes.SECONDARY}
                   >
                     {t(item.name)}
-                  </Text>
+                  </Text> </a>
                 </ListItemText>
               </ListItem>
             ))}
@@ -78,10 +78,10 @@ const Sidebar: FC<SidebarProps> = ({
           >
             {t('serverApp.social')}
           </Text>
-          <List className={styles.socialList}>
+           <List className={styles.socialList}>
             {social.map((item) => (
               <ListItemIcon key={item.name} className={styles.socialIcon}>
-                {item.icon}
+               <a target="_blank" rel='noreferrer' href={item.href}> {item.icon}   </a>
               </ListItemIcon>
             ))}
           </List>

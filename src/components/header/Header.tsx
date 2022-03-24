@@ -69,10 +69,11 @@ const Header: FC<HeaderProps> = ({
             </IconButton>
           ) : (
             <Image
-              src={'/react_logo.svg'}
-              alt={'react logo'}
-              width={30}
-              height={30}
+              src={'/d.png'}
+              alt={'debble logo'}
+              width={40}
+              height={40}
+              
             />
           )}
           <Title type={TitleSizes.PREVIEW} className={styles.label}>
