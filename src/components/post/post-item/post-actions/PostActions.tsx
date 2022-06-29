@@ -10,9 +10,19 @@ import { useModal } from 'src/hooks/useModal';
 import ModalCreateSharedPost from 'src/components/modal/modal-create-shared-post/ModalCreateSharedPost';
 import { useAuth } from 'src/components/auth/AuthContext';
 import { ACCOUNT_STATUS } from 'src/models/auth';
+import { getUrl, loadImgUrl, TypeUrl } from 'src/utils';
+import { useSelectPost } from 'src/store/app/hooks';
+import {
+  PostWithSomeDetails,
+  
+} from '@subsocial/types/dto';
 
-const PostActions: FC<PostActionsProps> = (props) => {
-  const { post, isSharedPost = 0 } = props;
+const PostActions: FC<PostActionsProps> = (props : any) => {
+  const { post, space, isSharedPost = 0 } = props;
+  //const { post, space, profile } = props;
+  const { rootPostId} = post.struct;
+  const postData = useSelectPost(rootPostId) as PostWithSomeDetails;
+
   const { visibleRepliesCount, sharesCount } = post.struct
   const { isVisible, toggleModal } = useModal();
 
@@ -41,16 +51,21 @@ const PostActions: FC<PostActionsProps> = (props) => {
         onClose={toggleModal}
       />
       <CardActions className={className}>
+      
         <ButtonVotes post={post.struct} reactionEnum={ReactionEnum.Upvote} />
-        <ButtonVotes post={post.struct} reactionEnum={ReactionEnum.Downvote} />
+          {/* DOWN VOTE BTN */}
+     {/*   <ButtonVotes post={post.struct} reactionEnum={ReactionEnum.Downvote} />*/}
+        
+           {/* COMMENT BTN */}
        {/* <ButtonComment
           onClick={props.toggleComments}
           value={visibleRepliesCount}
   />  */}
-        <ButtonShare
+     {/* SHARE BTN */}
+      {/*  <ButtonShare
           onClick={onClickShare}
           value={sharesCount}
-        />
+/>*/}
       </CardActions>
     </>
   );

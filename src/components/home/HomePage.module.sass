@@ -4,8 +4,6 @@
   align-items: center
 
   .box
-    position: fixed
-    z-index: 1
     max-width: 772px
     height: 72px
     width: 100%
@@ -15,20 +13,39 @@
 
     @include tablet
       padding: 0
-      max-width: 100vw
+      max-width: 100%
       height: 56px
 
-  .tabs
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2)
-    background-color: $color_tabs_bg
+  .banner
+    background: $gradient-color
+    height: 70vh
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100vw
+    padding: 10px
+
+    .banner_title
+      font-family: 'Montserrat', sans-serif
+      font-size: 60px
+      font-weight: 900
+      text-align: center
+
+      .testing
+        background-color: yellow
+    .tabs
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2)
+      background-color: $color_tabs_bg
 
     & :global(.MuiTab-root)
       height: 56px
 
   .content
     margin-top: 72px
-    width: 100%
+    margin-left: 150px
+    width: 100vw //100%
+    max-width: 100vw
+    background-color: yellow
 
     @include tablet
       margin-top: 56px
- 

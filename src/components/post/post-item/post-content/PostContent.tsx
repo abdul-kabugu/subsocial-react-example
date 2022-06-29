@@ -11,6 +11,7 @@ import Text from 'src/components/common/text/Text';
 import { useResponsiveSize } from 'src/components/responsive/ResponsiveContext';
 import PostInfo from '../PostInfo';
 import { useSelectPost } from 'src/store/app/hooks';
+import ButtonVotes from '../../../common/button/buttons-vote/ButtonVotes';
 import {
   PostWithSomeDetails,
   ReactionEnum,
@@ -83,6 +84,7 @@ const PostContent: FC<any> = (props) => {
               alt={post.content.title}
            
             />
+           
             {/* card footer img-view  */}
              {/*card  title */}
       <div style={{ paddingLeft: "5px", paddingRight: "5px", width: "100%", paddingTop: "2px", display: "flex", justifyContent: "space-between",
@@ -199,11 +201,12 @@ const PostContent: FC<any> = (props) => {
           image={loadImgUrl(post.content.image)}
           alt={post.content.title}
         />
-     
-      <div style={{ paddingLeft: "5px", paddingRight: "5px", width: "100%", paddingTop: "2px", display: "flex", justifyContent: "space-between",
+       
+     <div style={{ paddingLeft: "5px", paddingRight: "5px", width: "100%", paddingTop: "2px", display: "flex", justifyContent: "space-between",
         alignItems: "flex-end", paddingBottom: "10px"
     }}>
-      {post.content.title && (
+        
+{/*  {post.content.title && (
           <Link
             href={getUrl({
               type: TypeUrl.Post,
@@ -217,10 +220,10 @@ const PostContent: FC<any> = (props) => {
               {post.content.title}
             </p>
           </Link>
-        )}
+          )}  */}
   
         {/*spcae name */}
-          
+         
         <a className={styles.spaceLink}
                     href={getUrl({
                       type: TypeUrl.Space,
@@ -230,9 +233,9 @@ const PostContent: FC<any> = (props) => {
                     })}
                   >
                     {space?.content?.name || postData?.space?.content?.name}
-                  </a>  </div>  </Link> )}
-                  
-    </div>
+                  </a>  </div>  </Link> )} 
+                 
+                  </div>
      
   );
 };

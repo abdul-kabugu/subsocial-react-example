@@ -61,14 +61,25 @@ const ButtonBar = () => {
       ];
 
   return (
-    <div className={styles.box}>
+    <div>
+      <div className={styles.banner}>
+        <p className={styles.banner_title}> 
+        Your Portal To The  <br />
+        Creator Economy, <br />
+        and ownership.
+        </p>
+        </div>
+    <div className={styles.box}> 
+   
+      
       <Tabs
         className={styles.tabs}
-        tabs={tabs}
+        tabs={tabs}  
         value={value}
         setValue={handleChange}
         unselected={router.pathname !== '/'}
-      />
+  />
+    </div>
     </div>
   );
 };
@@ -96,11 +107,13 @@ const Content = () => {
   switch (value) {
     case 'feeds':
       return (
+       
         <MyFeed
           ids={followedSpaceIds}
           type={ListType.feeds}
           address={address}
         />
+        
       );
     case 'posts':
       return <PostList ids={config.recommendedSpaceIds} visibility={'onlyVisible'} />;
@@ -114,10 +127,14 @@ const Content = () => {
 const HomePage: NextPage = () => {
   return (
     <Layout className={styles.main}>
+     
       <ButtonBar />
       <div className={styles.content}>
+     \ <h2>hellow my GF</h2>
+       
         <Content />
-      </div>
+        </div>
+     
     </Layout>
   );
 };

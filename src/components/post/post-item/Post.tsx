@@ -28,7 +28,7 @@ type Props = {
 
 const Post: FC<Props> = ({
   postId,
-  isShowActions = true,
+  isShowActions = true,  //true
   withSpace,
   className: inputClassName,
   visibility
