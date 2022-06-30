@@ -12,6 +12,7 @@ import { useAuth } from 'src/components/auth/AuthContext';
 import { ACCOUNT_STATUS } from 'src/models/auth';
 import { getUrl, loadImgUrl, TypeUrl } from 'src/utils';
 import { useSelectPost } from 'src/store/app/hooks';
+import AddToPhotosIcon from '@mui/icons-material/AddToPhotos';
 import {
   PostWithSomeDetails,
   
@@ -51,8 +52,9 @@ const PostActions: FC<PostActionsProps> = (props : any) => {
         onClose={toggleModal}
       />
       <CardActions className={className}>
-      
+        
         <ButtonVotes post={post.struct} reactionEnum={ReactionEnum.Upvote} />
+        < AddToPhotosIcon  style={{cursor: "pointer", color: "#888888"}}/>
           {/* DOWN VOTE BTN */}
      {/*   <ButtonVotes post={post.struct} reactionEnum={ReactionEnum.Downvote} />*/}
         

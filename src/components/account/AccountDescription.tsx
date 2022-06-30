@@ -22,11 +22,7 @@ export const AccountDescription: FC<AccountDescriptionProps> = (props) => {
 
   return (
     <CardContent className={styles.description}>
-      <Text
-        type={TextSizes.NORMAL}
-        component={'div'}
-        className={styles.content}
-      >
+      <h4 className={styles.bioText}>
         {isShowMore || !props.isShowMore ? (
           <ReactMarkdown className={'markdown-body'}>
             {props.about}
@@ -39,7 +35,7 @@ export const AccountDescription: FC<AccountDescriptionProps> = (props) => {
             {!isShowMore ? t('general.seeMore') : t('general.seeLess')}
           </button>
         )}
-      </Text>
+      </h4>
     </CardContent>
   );
 };

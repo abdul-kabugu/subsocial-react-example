@@ -28,7 +28,7 @@ type Props = {
 
 const Post: FC<Props> = ({
   postId,
-  isShowActions = true,  //true
+  isShowActions = false,  //true
   withSpace,
   className: inputClassName,
   visibility
@@ -62,7 +62,9 @@ const Post: FC<Props> = ({
   };
 
   return (
-    <CardWrapper className={className}>
+    <CardWrapper  className={className}>
+
+      <div>
       <SpaceHiddenComponent content={postData.post} />
       {postData.post.struct.hidden && (
         <HiddenComponent data={postData.post} typeContent={TypeContent.Post} />
@@ -88,6 +90,7 @@ const Post: FC<Props> = ({
           <Comments parentStruct={postData.post.struct} />
         </>
       )}
+      </div>
     </CardWrapper>
   );
 };

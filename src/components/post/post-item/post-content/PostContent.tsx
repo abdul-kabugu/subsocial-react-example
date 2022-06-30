@@ -25,8 +25,9 @@ const PostContent: FC<any> = (props) => {
   const postData = useSelectPost(rootPostId) as PostWithSomeDetails;
 
   return (
-    <div className={styles.mainPostContent}>
-      <div className={styles.postContent}>
+    <div>   {/*className={styles.mainPostContent}*/}
+      
+      <div>  {/* className={styles.postContent}*/}
        {/* <PostInfo profile={profile} post={post} space={space} />  */}
         { /*post.content.title && (
           <Link
@@ -185,7 +186,8 @@ const PostContent: FC<any> = (props) => {
      {/*DESKTOP_VIEW  */}
       {/*card  title */}
       { isDesktop  && post.content.image && post.content.summary && (
-        <Link
+      <div className={styles.mainPostContentDesktop}>
+         <Link
         href={getUrl({
           type: TypeUrl.Post,
           title: space?.content.handle,
@@ -195,36 +197,11 @@ const PostContent: FC<any> = (props) => {
         })}
         image
       >
-        <CardMedia
-          component="img"
-          className={styles.imgContentDesktop}
-          image={loadImgUrl(post.content.image)}
-          alt={post.content.title}
-        />
-       
-     <div style={{ paddingLeft: "5px", paddingRight: "5px", width: "100%", paddingTop: "2px", display: "flex", justifyContent: "space-between",
-        alignItems: "flex-end", paddingBottom: "10px"
-    }}>
-        
-{/*  {post.content.title && (
-          <Link
-            href={getUrl({
-              type: TypeUrl.Post,
-              title: space?.content.handle,
-              id: space?.id,
-              subTitle: post.content.title,
-              subId: post.id,
-            })}
-          >
-            <p className={styles.title}>
-              {post.content.title}
-            </p>
-          </Link>
-          )}  */}
-  
-        {/*spcae name */}
-         
-        <a className={styles.spaceLink}
+       <img src={loadImgUrl(post.content.image)} alt={post.content.title}  className={styles.imgContentDesktop}/>
+
+      </Link>
+      <div className={styles.mainPostFooterDesktop}>
+      <a className={styles.spaceLink}
                     href={getUrl({
                       type: TypeUrl.Space,
                       //@ts-ignore
@@ -233,11 +210,17 @@ const PostContent: FC<any> = (props) => {
                     })}
                   >
                     {space?.content?.name || postData?.space?.content?.name}
-                  </a>  </div>  </Link> )} 
-                 
-                  </div>
-     
+                  </a>
+                  <ButtonVotes post={post.struct} reactionEnum={ReactionEnum.Upvote} />
+      </div>
+      </div>
+    )} 
+              
+               </div>        
+ 
+    
   );
+  
 };
 
 export default PostContent;

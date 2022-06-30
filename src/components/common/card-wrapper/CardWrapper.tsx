@@ -12,11 +12,16 @@ const CardWrapper: FC<CardProps> = ({
     ? `${inputClassName} ${styles.card}`
     : styles.card;
 
-  return (
+ {/* return (
     <Card className={className} {...props}>
       {children}
     </Card>
-  );
+ );*/}
+ return (
+  <div className={className} {...props}>
+  {children}
+</div>
+ )
 };
 
 export default CardWrapper;

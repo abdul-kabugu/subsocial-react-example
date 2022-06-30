@@ -130,7 +130,7 @@ const HomePage: NextPage = () => {
      
       <ButtonBar />
       <div className={styles.content}>
-     \ <h2>hellow my GF</h2>
+     <h2>hellow my GF</h2>
        
         <Content />
         </div>

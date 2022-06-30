@@ -1,8 +1,36 @@
 @import src/styles/vars
 
 .title
-  margin-bottom: $space_mini
+  margin-bottom: 0
+  text-align: center
+  font-family: 'Montserrat', sans-serif
+  font-weight: 600
+  font-size: $font_large
 
+.accountBox
+  width: 100%
+  height: 80vh
+  background: $gradient-color
+  display: flex
+  align-items: center
+  justify-content: center
+
+  .avatarContainer
+    display: flex
+    align-items: center
+    justify-content: center
+
+  .accountBoxHeader
+
+    .accountBoxSubHeader
+      background-color: gold
+      width: 50%
+      height: 60px
+
+    .accountBoxFooter
+      background-color: purple
+      width: 50%
+      height: 60px
 .subheader
   display: flex
   flex-direction: column
@@ -50,4 +78,20 @@
 
 .description
   padding-top: 0
-  padding-bottom: $space_normal
+
+  .bioText
+    font-family: 'Montserrat', sans-serif
+    font-weight: 700
+    font-size: $font_huge
+    margin-top: 8px
+    margin-bottom: 0
+
+    .folloersContainer
+      width: 70%
+      display: flex
+      align-items: center
+      justify-content: center
+
+      .balanceCardContainer
+        width: 100%
+        background-color: blue

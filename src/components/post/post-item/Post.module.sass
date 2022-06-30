@@ -8,6 +8,10 @@ $size_img_mobile_height: 270px
   &:global(.MuiPaper-root-MuiCard-root)
     box-shadow: none
 
+    .imgtest
+      max-width: 335px
+      height: 343px
+
 .content
   &:global(.MuiTypography-root)
     font-size: $font_normal
@@ -20,7 +24,10 @@ $size_img_mobile_height: 270px
   text-transform: capitalize
 
 .spaceLink
-  font-size: $font-small
+  font-size: font_small_alt
+  color: black
+  font-family: 'Montserrat', sans-serif
+  font-weight: 300
 
   &:hover
     text-decoration: underline
@@ -29,7 +36,7 @@ $size_img_mobile_height: 270px
 
 .actions
   padding: 0.125rem $space_normal
-  justify-content: space-evenly
+  justify-content: space-between //space-evenly
 
 .sharedPost
 
@@ -54,16 +61,32 @@ $size_img_mobile_height: 270px
   box-shadow: none
   margin-bottom: 10px
 
-.mainPostContent
-  display: flex
-  flex-direction: column
-  justify-content: space-between
-  padding: 10px
-  background-color: purple
-  width: 100% //335.33px
-  height: 288.33px
-  margin: 12px
+/*.mainPostContent
+ display: flex
+ flex-direction: column
+ justify-content: space-between
+ padding: 10px
+ width: 100% //335.33px
+ height: 288.33px
+ margin: 12px */
 
+.mainPostContentDesktop
+
+  width: 335.33px
+  height: 323.33px
+  border-radius: 5px
+  .mainPostFooterDesktop
+    width: 100%
+    background-color: #F8F8F8
+    padding: 6px
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+.mainPostContent
+  background-color: red
+  width: 335.33px
+  height: 288.33px
   .mainPostContentMobile
     display: flex
     flex-direction: column
@@ -74,11 +97,15 @@ $size_img_mobile_height: 270px
     padding-top: 0
     border-radius: 16px
 
+    .testingCard
+      width: 100%
+      height: 300px
+      background-color: red
+
   .mainPostContentTablet
     display: flex
     flex-direction: column
     justify-content: space-between
-
     width: 100% //400.33px
     height: 320.33px
     padding-top: 0
@@ -116,4 +143,4 @@ $size_img_mobile_height: 270px
   width: $size_img_content
   height: $size_img_height
   //margin: $space_normal 0 $space_normal $space_normal
-  border-radius: 0.25rem
+  border-radius: 14px //0.25rem
