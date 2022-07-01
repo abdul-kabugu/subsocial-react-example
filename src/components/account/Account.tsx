@@ -17,86 +17,7 @@ import { AccountDescription } from './AccountDescription';
 import ProfileFollowers from '../common/profile-followers/ProfileFollowers';
 
 const Account: FC<AccountProps> = (props) => {
- {/* return (
-
-    <CardWrapper>
-      {props.hiddenBlock}
-      <CardHeader
-        avatar={
-          <AvatarElement
-            src={props.avatar}
-            size={AvatarSizes.LARGE}
-            id={props.id}
-          />
-        }
-        action={props.action}
-        title={
-          <Title type={TitleSizes.PREVIEW} className={styles.title}>
-            {props.name}
-          </Title>
-        }
-        subheader={
-          props.followingCount === undefined ? (
-            <FollowersBlock
-              followers={props.followersCount}
-              posts={props.posts}
-              id={props.id}
-            />
-          ) : (
-            <ProfileFollowers
-              className={styles.followers}
-              following={props.followingCount}
-              followers={props.followersCount}
-              accountId={props.id}
-            />
-          )
-        }
-      />
-
-      <AccountDescription
-        about={props.about}
-        summary={props.summary}
-        isShowMore={props.isShowMore}
-      />
-
-      {props.links && props.links?.length > 0 && (
-        <CardActions className={`${styles.cardAction} ${styles.spaceIcon}`}>
-          {props.links.map((link) => (
-            <IconLink link={link as string} key={link as string} />
-          ))}
-        </CardActions>
-      )}
-
-      {props.withBalance && (
-        <CardContent className={styles.accountBalanceInfo}>
-          <div className={styles.accountWallet}>
-            <Image src={'/wallet.jpg'} width={24} height={24} alt={'wallet'} />
-            <Address label={props.id} size={'lg'} isCopy isQr />
-          </div>
-
-          <Balance address={props.id} isIcon className={styles.balance} />
-        </CardContent>
-      )}
-
-      {props.tags && <TagList tags={props.tags} className={styles.tags} />}
-
-      {props.buttons && (
-        <CardActions
-          className={`${styles.cardAction} ${styles.accountButtons}`}
-        >
-          {props.buttons}
-        </CardActions>
-      )}
-
-      {props.tabs && (
-        <>
-          <Divider variant="middle" />
-          {props.tabs}
-        </>
-      )}
-    </CardWrapper>
-
-      );*/}
+ 
     return (
         <div className={styles.accountBox}>
           <div className={styles.accountBoxHeader}>
@@ -119,7 +40,7 @@ const Account: FC<AccountProps> = (props) => {
         isShowMore={props.isShowMore}
       />
         </div>
-        <div className={styles.folloersContainer}>
+        <div style={{marginBottom: "8px"}}>
         {
           props.followingCount === undefined ? (
             <FollowersBlock
@@ -159,23 +80,25 @@ const Account: FC<AccountProps> = (props) => {
         </CardContent>
       )}
           </div>
-          <div style={{width: "100%", display: "flex", justifyContent: "space-between"}}>
+          <div style={{width: "100%",}}>
           {props.buttons && (
+            <CardWrapper>
         <CardActions
           className={`${styles.cardAction} ${styles.accountButtons}`}
         >
           {props.buttons}
         </CardActions>
-      )}
-          </div>
-          <div>
-          {props.tabs && (
+
+        {props.tabs && (
         <>
           <Divider variant="middle" />
           {props.tabs}
         </>
       )}
+        </CardWrapper>
+      )}  
           </div>
+         
           </div>
         
           <div className={styles.accountBoxSubHeader}></div>

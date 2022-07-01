@@ -69,118 +69,100 @@ const PostContent: FC<any> = (props) => {
         {isMobile && post.content.image && post.content.summary && (
           <div className={styles.mainPostContentMobile}>
           <Link
-            href={getUrl({
-              type: TypeUrl.Post,
-              title: space?.content.handle,
-              id: space?.id,
-              subTitle: post.content.title,
-              subId: post.struct.id,
-            })}
-            image
-          >
-            <CardMedia
-              component="img"
-              className={styles.imgContentMobile}
-              image={loadImgUrl(post.content.image)}
-              alt={post.content.title}
-           
-            />
-           
-            {/* card footer img-view  */}
-             {/*card  title */}
-      <div style={{ paddingLeft: "5px", paddingRight: "5px", width: "100%", paddingTop: "2px", display: "flex", justifyContent: "space-between",
-        alignItems: "flex-end", 
-    }}>
-      {post.content.title && (
-          <Link
-            href={getUrl({
-              type: TypeUrl.Post,
-              title: space?.content.handle,
-              id: space?.id,
-              subTitle: post.content.title,
-              subId: post.id,
-            })}
-          >
-            <p className={styles.title}>
-              {post.content.title}
-            </p>
-          </Link>
-        )}
+         href={getUrl({
+           type: TypeUrl.Post,
+           title: space?.content.handle,
+           id: space?.id,
+           subTitle: post.content.title,
+           subId: post.struct.id,
+         })}
+         image
+       >
+        <img src={loadImgUrl(post.content.image)} alt={post.content.title}  className={styles.imgContentDesktop}/>
   
-        {/*spcae name */}
-          
+       </Link>
+       <div style={{width: "95%", display: "flex", justifyContent: "space-between", alignItems: "center", padding : "3px"}}>
+       <a className={styles.spaceLink}
+                     href={getUrl({
+                       type: TypeUrl.Space,
+                       //@ts-ignore
+                       title: space?.content?.handle || postData?.space?.content?.handle,
+                       id: space?.struct.id || postData?.space?.struct.id,
+                     })}
+                   >
+                     {space?.content?.name || postData?.space?.content?.name}
+                   </a>
+                   <ButtonVotes post={post.struct} reactionEnum={ReactionEnum.Upvote} />
+       </div>
+       </div>
+                    
+          )}
+        
+       {/*DESKTOP_VIEW  */}
+        {/*card  title */}
+        { isDesktop  && post.content.image && post.content.summary && (
+        <div className={styles.mainPostContentDesktop}>
+           <Link
+          href={getUrl({
+            type: TypeUrl.Post,
+            title: space?.content.handle,
+            id: space?.id,
+            subTitle: post.content.title,
+            subId: post.struct.id,
+          })}
+          image
+        >
+         <img src={loadImgUrl(post.content.image)} alt={post.content.title}  className={styles.imgContentDesktop}/>
+  
+        </Link>
+        <div className={styles.mainPostFooterDesktop}>
         <a className={styles.spaceLink}
-                    href={getUrl({
-                      type: TypeUrl.Space,
-                      //@ts-ignore
-                      title: space?.content?.handle || postData?.space?.content?.handle,
-                      id: space?.struct.id || postData?.space?.struct.id,
-                    })}
-                  >
-                    {space?.content?.name || postData?.space?.content?.name}
-                  </a>  </div>
-
-                  </Link>
-          </div>
+                      href={getUrl({
+                        type: TypeUrl.Space,
+                        //@ts-ignore
+                        title: space?.content?.handle || postData?.space?.content?.handle,
+                        id: space?.struct.id || postData?.space?.struct.id,
+                      })}
+                    >
+                      {space?.content?.name || postData?.space?.content?.name}
+                    </a>
+                    <ButtonVotes post={post.struct} reactionEnum={ReactionEnum.Upvote} />
+        </div>
+        </div>
         )}
       </div>
       {/*TABLET_VIEW  */}
 
    {isTablet && post.content.image && post.content.summary && (
-          <div className={styles.mainPostContentMobile}>
-          <Link
-            href={getUrl({
-              type: TypeUrl.Post,
-              title: space?.content.handle,
-              id: space?.id,
-              subTitle: post.content.title,
-              subId: post.struct.id,
-            })}
-            image
-          >
-            <CardMedia
-              component="img"
-              className={styles.imgContentMobile}
-              image={loadImgUrl(post.content.image)}
-              alt={post.content.title}
-           
-            />
-            {/* card footer img-view  */}
-             {/*card  title */}
-      <div style={{ paddingLeft: "5px", paddingRight: "5px", width: "100%", paddingTop: "2px", display: "flex", justifyContent: "space-between",
-        alignItems: "flex-end", 
-    }}>
-      {post.content.title && (
-          <Link
-            href={getUrl({
-              type: TypeUrl.Post,
-              title: space?.content.handle,
-              id: space?.id,
-              subTitle: post.content.title,
-              subId: post.id,
-            })}
-          >
-            <p className={styles.title}>
-              {post.content.title}
-            </p>
-          </Link>
-        )}
-  
-        {/*spcae name */}
-          
-        <a className={styles.spaceLink}
-                    href={getUrl({
-                      type: TypeUrl.Space,
-                      //@ts-ignore
-                      title: space?.content?.handle || postData?.space?.content?.handle,
-                      id: space?.struct.id || postData?.space?.struct.id,
-                    })}
-                  >
-                    {space?.content?.name || postData?.space?.content?.name}
-                  </a>  </div>
+        <div className={styles.mainPostContentTablet}>
+        <Link
+       href={getUrl({
+         type: TypeUrl.Post,
+         title: space?.content.handle,
+         id: space?.id,
+         subTitle: post.content.title,
+         subId: post.struct.id,
+       })}
+       image
+     >
+      <img src={loadImgUrl(post.content.image)} alt={post.content.title}  className={styles.imgContentDesktop}/>
 
-                  </Link>
-          </div>
+     </Link>
+     <div className={styles.mainPostFooterDesktop}>
+     <a className={styles.spaceLink}
+                   href={getUrl({
+                     type: TypeUrl.Space,
+                     //@ts-ignore
+                     title: space?.content?.handle || postData?.space?.content?.handle,
+                     id: space?.struct.id || postData?.space?.struct.id,
+                   })}
+                 >
+                   {space?.content?.name || postData?.space?.content?.name}
+                 </a>
+                 <ButtonVotes post={post.struct} reactionEnum={ReactionEnum.Upvote} />
+     </div>
+     </div>
+                  
         )}
       
      {/*DESKTOP_VIEW  */}
@@ -200,7 +182,7 @@ const PostContent: FC<any> = (props) => {
        <img src={loadImgUrl(post.content.image)} alt={post.content.title}  className={styles.imgContentDesktop}/>
 
       </Link>
-      <div className={styles.mainPostFooterDesktop}>
+      <div style={{width: "95%", display: "flex", justifyContent: "space-between", alignItems: "center", padding : "3px"}}>
       <a className={styles.spaceLink}
                     href={getUrl({
                       type: TypeUrl.Space,

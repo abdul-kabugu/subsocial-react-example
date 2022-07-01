@@ -74,7 +74,7 @@ const InfinityListScroll: FC<InfinityPostList> = ({
       </Box> )}
       {/*desktop view */}
 
-      {isDesktop && ( <Box sx={{width: "1220px", display: 'grid', gap: 1, gridTemplateColumns: 'repeat(4, 1fr)' }}> 
+      {isDesktop && ( <Box sx={{width: "100%", display: 'grid', gap: 1, gridTemplateColumns: 'repeat(4, 1fr)' }}> 
       {!isEmpty ? (
         data.map((id: string) => renderItem(id))
       ) : (
