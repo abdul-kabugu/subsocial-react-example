@@ -51,35 +51,41 @@ const ButtonBar = () => {
 
   const tabs: TabProps[] = isAuthorized
     ? [
-        { label: t('tabs.feed'), tabValue: 'feeds' },
-        { label: t('tabs.posts'), tabValue: 'posts' },
-        { label: t('tabs.spaces'), tabValue: 'spaces' },
-      ]
+      { label: t('tabs.feed'), tabValue: 'feeds' },
+      { label: t('tabs.posts'), tabValue: 'posts' },
+      { label: t('tabs.spaces'), tabValue: 'spaces' },
+    ]
     : [
-        { label: t('tabs.posts'), tabValue: 'posts' },
-        { label: t('tabs.spaces'), tabValue: 'spaces' },
-      ];
+      { label: t('tabs.posts'), tabValue: 'posts' },
+      { label: t('tabs.spaces'), tabValue: 'spaces' },
+    ];
 
   return (
     <div>
       <div className={styles.banner}>
-        <p className={styles.banner_title}> 
-        Your Portal To The  <br />
-        Creator Economy, <br />
-        and ownership.
+        <p className={styles.banner_title}>
+          Decentralized Social  <br />
+          Networking platform <br />
+          For Digital Designers <br />
+          And Creatives
         </p>
-        </div>
-    <div className={styles.box}> 
-   
-      
-      <Tabs
-        className={styles.tabs}
-        tabs={tabs}  
-        value={value}
-        setValue={handleChange}
-        unselected={router.pathname !== '/'}
-  />
-    </div>
+        <p className={styles.banner_subtitle}>
+          <span style={{ marginRight: "10px" }}>Your Keys</span>
+          <span style={{ marginRight: "10px" }}>Your content</span>
+          <span style={{ marginRight: "10px" }}>Your network</span>
+        </p>
+      </div>
+      <div className={styles.box}>
+
+
+        <Tabs
+          className={styles.tabs}
+          tabs={tabs}
+          value={value}
+          setValue={handleChange}
+          unselected={router.pathname !== '/'}
+        />
+      </div>
     </div>
   );
 };
@@ -107,18 +113,19 @@ const Content = () => {
   switch (value) {
     case 'feeds':
       return (
-       
+
         <MyFeed
           ids={followedSpaceIds}
           type={ListType.feeds}
           address={address}
         />
-        
+
       );
     case 'posts':
       return <PostList ids={config.recommendedSpaceIds} visibility={'onlyVisible'} />;
     case 'spaces':
       return <SpaceList ids={config.recommendedSpaceIds} />;
+
     default:
       return null;
   }
@@ -127,14 +134,15 @@ const Content = () => {
 const HomePage: NextPage = () => {
   return (
     <Layout className={styles.main}>
-     
+
       <ButtonBar />
       <div className={styles.content}>
-     
-       
+
+
         <Content />
-        </div>
-     
+
+      </div>
+
     </Layout>
   );
 };

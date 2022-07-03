@@ -4,7 +4,7 @@
   align-items: center
 
   .box
-    max-width: 772px
+    max-width: 1200px
     height: 72px
     width: 100%
     padding: $space_normal $space_mini 0
@@ -20,6 +20,7 @@
     background: $gradient-color
     height: 70vh
     display: flex
+    flex-direction: column
     align-items: center
     justify-content: center
     width: 100vw
@@ -27,18 +28,21 @@
 
     .banner_title
       font-family: 'Montserrat', sans-serif
-      font-size: 60px
+      font-size: 80px
       font-weight: 900
       text-align: center
-
       @include tablet
-      font-size: 45px
+      font-size: 30px
       font-weight: 600
       text-align: center
+    
+    .banner_subtitle
+     color: gray
 
     .tabs
       box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 2px 1px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.2)
       background-color: $color_tabs_bg
+      max-width: 720px
 
     & :global(.MuiTab-root)
       height: 56px

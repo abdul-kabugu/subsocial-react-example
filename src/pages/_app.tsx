@@ -26,7 +26,7 @@ import i18n from '../i18n';
 function MyApp({ Component, pageProps }: AppProps) {
   const store = useStore(pageProps.initialReduxState);
   const adBlockDetected = useDetectAdBlock();
-  const [ isShowingMobileBurger, setIsShowingMobileBurger ] = useState(false);
+  const [isShowingMobileBurger, setIsShowingMobileBurger] = useState(false);
   const handleMobileBurgerClick = () => {
     setIsShowingMobileBurger(current => !current);
   };
@@ -34,7 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <StyledEngineProvider injectFirst>
       <Head>
-        <title>debble</title>
+        <title>Pax</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
       <I18nextProvider i18n={i18n}>
@@ -49,7 +49,7 @@ function MyApp({ Component, pageProps }: AppProps) {
                     onSidebarClose={handleMobileBurgerClick}
                   />
                   <Header
-                    label="debble"
+                    label="Pax"
                     onMobileBurgerClick={handleMobileBurgerClick}
                     isShowingMobileBurger={isShowingMobileBurger}
                   />

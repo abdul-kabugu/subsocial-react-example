@@ -23,17 +23,17 @@ import ButtonSignIn from '../common/button/button-sign-in/ButtonSignIn';
 import ButtonProfile from '../common/button/button-profile/ButtonProfile';
 
 const Header: FC<HeaderProps> = ({
-                                   label,
-                                   isShowingMobileBurger,
-                                   onMobileBurgerClick,
-                                 }) => {
+  label,
+  isShowingMobileBurger,
+  onMobileBurgerClick,
+}) => {
   const dispatch = useAppDispatch();
   const { address, accounts } = useAppSelector((state) => state.myAccount);
   const profile = useSelectProfile(address);
   const account = accounts?.find((acc) => acc.address === address);
   const { openSingInModal } = useAuth();
   const { api } = useApi();
-  const [ hasSpace, setHasSpace ] = useState(false);
+  const [hasSpace, setHasSpace] = useState(false);
   const { isDesktop } = useResponsiveSize();
 
   useEffect(() => {
@@ -47,7 +47,7 @@ const Header: FC<HeaderProps> = ({
         }
       });
     })();
-  }, [ address, api ]);
+  }, [address, api]);
 
   return (
     <AppBar
@@ -69,11 +69,11 @@ const Header: FC<HeaderProps> = ({
             </IconButton>
           ) : (
             <Image
-              src={'/d.png'}
-              alt={'debble logo'}
+              src={'/pax.svg'}
+              alt={'pax logo'}
               width={40}
               height={40}
-              
+
             />
           )}
           <Title type={TitleSizes.PREVIEW} className={styles.label}>

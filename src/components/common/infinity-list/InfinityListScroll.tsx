@@ -29,7 +29,7 @@ const InfinityListScroll: FC<InfinityPostList> = ({
   const [page, setPage] = useState(1);
   const [data, setData] = useState(dataSource.length > 0 ? dataSource : []);
   const { t } = useTranslation();
-  const { isMobile, isDesktop,isTablet } = useResponsiveSize();
+  const { isMobile, isDesktop, isTablet } = useResponsiveSize();
 
   const handleInfiniteOnLoad = async (page: number) => {
     const newData = page === 1 ? [] : await loadMore(page, config.infinityScrollOffset);
@@ -56,34 +56,35 @@ const InfinityListScroll: FC<InfinityPostList> = ({
       hasMore={data.length < totalCount}
       className={styles.list}
     >
-     { isMobile && ( <Box sx={{ width: "100%", display: 'grid', gap: 1, gridTemplateColumns: 'repeat(1, 1fr)' }}> 
-      {!isEmpty ? (
-        data.map((id: string) => renderItem(id))
-      ) : (
-        <EmptyComponent text={emptyText} />
-      )}
-      </Box> )}
+      {isMobile && (<Box sx={{ width: "100%", display: 'grid', gap: 1, gridTemplateColumns: 'repeat(1, 1fr)' }}>
+        {!isEmpty ? (
+          data.map((id: string) => renderItem(id))
+        ) : (
+          <EmptyComponent text={emptyText} />
+        )}
+      </Box>)}
 
       {/* TABLET  VIEW  */}
-      { isTablet && ( <Box sx={{ width: "100%", display: 'grid', gap: 1, gridTemplateColumns: 'repeat(2, 1fr)' }}> 
-      {!isEmpty ? (
-        data.map((id: string) => renderItem(id))
-      ) : (
-        <EmptyComponent text={emptyText} />
-      )}
-      </Box> )}
-      {/*desktop view */}
+      {isTablet && (<Box sx={{ width: "100%", display: 'grid', gap: 1, gridTemplateColumns: 'repeat(2, 1fr)' }}>
+        {!isEmpty ? (
+          data.map((id: string) => renderItem(id))
+        ) : (
+          <EmptyComponent text={emptyText} />
+        )}
+      </Box>)}
+      {/*DESKTOP VIEW*/}
 
-      {isDesktop && ( <Box sx={{width: "100%", display: 'grid', gap: 1, gridTemplateColumns: 'repeat(4, 1fr)' }}> 
-      {!isEmpty ? (
-        data.map((id: string) => renderItem(id))
-      ) : (
-        <EmptyComponent text={emptyText} />
-      )}
-      </Box> )}
+      {isDesktop && (<Box sx={{ width: "1250px", display: "grid", gap: 1, gridTemplateColumns: 'repeat(3, 2fr)' }}>
+        {!isEmpty ? (
+          data.map((id: string) => renderItem(id))
+        ) : (
+          <EmptyComponent text={emptyText} />
+        )}
+      </Box>)}
     </InfiniteScroll>
   );
 };
 
 
 export default InfinityListScroll;
+

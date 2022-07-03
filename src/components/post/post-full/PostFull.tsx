@@ -220,7 +220,7 @@ const PostFull: FC<PostFullProps> = (props) => {
       {!isSharedPost && <TagList tags={post.content?.tags} className={styles.tags} />}
       {!isSharedPost && <Divider variant="middle" />}
 
-      <CardActions
+    {/*  <CardActions
         className={classNames(styles.cardActions, {
           [styles.sharedPostActions]: isSharedPost,
         })}
@@ -245,7 +245,7 @@ const PostFull: FC<PostFullProps> = (props) => {
           isShowLabel
           value={post.struct.sharesCount}
         />
-      </CardActions>
+      </CardActions> */}
     </CardWrapper>
   );
 };
