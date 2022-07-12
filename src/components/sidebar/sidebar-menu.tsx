@@ -5,7 +5,10 @@ import LanguageIcon from '@mui/icons-material/Language';
 import DescriptionOutlinedIcon from '@mui/icons-material/DescriptionOutlined';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
-import {StorefrontOutlined, AnnouncementOutlined, BugReportOutlined} from '@mui/icons-material'
+//import {StorefrontOutlined, AnnouncementOutlined, BugReportOutlined} from '@mui/icons-material'
+  import StorefrontOutlined from '@mui/icons-material/StorefrontOutlined';
+import AnnouncementOutlined from '@mui/icons-material/AnnouncementOutlined';
+import BugReportOutlined from '@mui/icons-material/BugReportOutlined';
 
 export const frameworks: ItemType[] = [
   {
